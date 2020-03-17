@@ -1,0 +1,15 @@
+<template>
+    <lightning-button label='NEW!' variant='brand' onclick={createNew}></lightning-button>
+    <lightning-button label='EDIT' variant='brand' onclick={editRecord}></lightning-button>
+    <lightning-button label="DELETE" variant='brand' onclick={deleteRecord}></lightning-button>
+    <template if:true={employees}>
+        <lightning-datatable
+                key-field="id"
+                data={employees}
+                columns={columns}>
+        </lightning-datatable>
+    </template>
+    <template if:true={error}>
+        <p>Some unexpected Error!!!!</p>
+    </template>
+</template>

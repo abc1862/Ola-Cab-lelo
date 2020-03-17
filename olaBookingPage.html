@@ -1,0 +1,51 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label="Form">
+            
+                   <div style="align-items: center;">
+                    <fieldset class="slds-box slds-theme--default slds-container--small" >
+                        <lightning-record-edit-form object-api-name={OLAOBJ} onsuccess={createEntry}>
+                            <lightning-messages></lightning-messages>
+                            <div  class="slds-form-element">
+                                <div>
+                                    Booking Id : <lightning-input disabled field-name={bid} value={bid} class="slds-input"></lightning-input><br/>
+                                </div>
+                                <div>
+                                    Car type : <select onchange={handleNewCartype} class="slds-select">
+                                                <option value="">choose one...</option>
+                                                <option value="Auto">Auto</option>
+                                                <option value="Mini">Mini</option>
+                                                <option value="Micro">Micro</option>
+                                                <option value="Prime">Prime</option>
+                                                <option value="Share">Share</option>
+                                                <option value="Rental">Rental</option>
+                                                <option value="Outstation">Outstation</option>
+                                            </select><br/>
+                                    
+                                    <lightning-input onchange={handleNewcustomer} label="Cust Name" field-name={customer} class="slds-input"></lightning-input><br/>
+                                </div>
+                                <div>
+                                    <lightning-input label="Drop Location" onchange={handleNewdropLocation} field-name={droplocation} class="slds-input"></lightning-input><br/>
+                                    <lightning-input label="Pickup Location" onchange={handleNewpickupLocation} field-name={pickLocation} class="slds-input"></lightning-input><br/>
+                                </div>
+                                <div>
+                                    <lightning-input label="Phone" onchange={handleNewphone} field-name={phone} class="slds-input"></lightning-input><br/>
+                                </div>
+                             </div>
+                            <lightning-button type="submit" variant="brand" label="Book your Ride"></lightning-button>
+                        </lightning-record-edit-form>
+                    </fieldset>
+                </div>
+                   
+        </lightning-tab>
+        <lightning-tab label="Record Page" title="Pre existing entries">
+            <c-record-page></c-record-page>
+        </lightning-tab>
+    </lightning-tabset>
+    
+<!-- <div class="slds-m-around_medium">
+    
+</div> -->
+
+
+</template>
